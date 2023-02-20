@@ -6,3 +6,7 @@
   - template
   - script
   - style
+
+## Vue File
+
+Every vue file represents a vue component
