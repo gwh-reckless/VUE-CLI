@@ -1,5 +1,7 @@
 <template>
   <h1>{{  title  }}</h1>
+  <h2>Just Test</h2>
+  <img src="./assets/logo.png" alt="">
   <br>
   <!-- define a ref called boo here -->
   <input type="text" ref="boo">
@@ -8,7 +10,6 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 import Modal from "./components/Modal.vue";
 
 export default {
@@ -33,7 +34,8 @@ export default {
 };
 </script>
 
-<style>
+<style >
+/* Notice: the app styles can not be scoped, because it's actually not in this component */
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

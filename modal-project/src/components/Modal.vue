@@ -1,6 +1,7 @@
 <template>
     <div class="backdrop">
         <div class="modal">
+            <h1>Modal Title</h1>
             <p>
                 modal content
             </p>
@@ -19,7 +20,9 @@ export default {
 
 </script>
 
-<style>
+<!-- means the style will be scoped -->
+<!-- the css selector will select the data-attribute  -->
+<style scoped>
     .modal {
         width: 400px;
         padding: 20px;
@@ -34,4 +37,12 @@ export default {
         width: 100%;
         height: 100%;
     }
+     h1 {
+        color:red;
+     }
+
+     /* Instead of using scoped , we can make the selector more specific */
+     /* .modal h1 {
+        color: red;
+     } */
 </style>
