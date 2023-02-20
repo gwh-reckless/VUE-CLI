@@ -1,5 +1,9 @@
 <template>
   <h1>{{  title  }}</h1>
+  <br>
+  <!-- define a ref called boo here -->
+  <input type="text" ref="boo">
+  <button @click="handleClick">click me</button>
 </template>
 
 <script>
@@ -10,6 +14,13 @@ export default {
   data(){
     return {
       title: 'My First Vue App: )'
+    }
+  },
+  methods: {
+    handleClick(){
+      // use the ref called boo
+      this.$refs.boo.classList.add('active')
+      this.$refs.boo.focus();
     }
   }
 };
