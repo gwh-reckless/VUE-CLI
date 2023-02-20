@@ -4,24 +4,31 @@
   <!-- define a ref called boo here -->
   <input type="text" ref="boo">
   <button @click="handleClick">click me</button>
+  <Modal v-if="showModal"/>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
+import Modal from "./components/Modal.vue";
 
 export default {
   name: 'App',
   data(){
     return {
-      title: 'My First Vue App: )'
+      title: 'My First Vue App: )',
+      showModal: false
     }
   },
   methods: {
     handleClick(){
       // use the ref called boo
-      this.$refs.boo.classList.add('active')
-      this.$refs.boo.focus();
+      // this.$refs.boo.classList.add('active')
+      // this.$refs.boo.focus();
+      this.showModal = true;
     }
+  },
+  components: {
+    Modal
   }
 };
 </script>
