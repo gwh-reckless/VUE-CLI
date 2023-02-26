@@ -7,7 +7,8 @@
     <!-- define a ref called boo here -->
     <input type="text" ref="boo">
     <button @click="handleClick">click me</button>
-    <Modal v-if="showModal" :header="header" :text="text" theme="sale"/>
+    <!-- @close is v-on:close, which is listening the message -->
+    <Modal v-if="showModal" :header="header" :text="text" theme="sale" @close="toggleModal"/>
   </div>
 </template>
 
@@ -30,6 +31,9 @@ export default {
       // this.$refs.boo.classList.add('active')
       // this.$refs.boo.focus();
       this.showModal = true;
+    },
+    toggleModal(){
+      this.showModal = !this.showModal;
     }
   },
   components: {

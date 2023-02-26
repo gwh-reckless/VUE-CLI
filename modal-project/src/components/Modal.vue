@@ -6,7 +6,7 @@
                 {{ text }}
             </p>
             <!-- How should we close it??? -->
-            <button>
+            <button @click="closeModal">
                 close modal
             </button>
         </div>
@@ -18,6 +18,11 @@
 export default {
     name: 'Modal',
     props: ['header', 'text', 'theme'],
+    methods: {
+        closeModal(){
+            this.$emit('close');
+        }
+    }
 }
 
 </script>
