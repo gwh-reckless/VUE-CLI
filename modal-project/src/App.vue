@@ -1,12 +1,14 @@
 <template>
-  <h1>{{  title  }}</h1>
-  <h2>Just Test</h2>
-  <img src="./assets/logo.png" alt="">
-  <br>
-  <!-- define a ref called boo here -->
-  <input type="text" ref="boo">
-  <button @click="handleClick">click me</button>
-  <Modal v-if="showModal"/>
+  <div>
+    <h1>{{  title  }}</h1>
+    <h2>Just Test</h2>
+    <img src="./assets/logo.png" alt="">
+    <br>
+    <!-- define a ref called boo here -->
+    <input type="text" ref="boo">
+    <button @click="handleClick">click me</button>
+    <Modal v-if="showModal" :header="header" :text="text" theme="sale"/>
+  </div>
 </template>
 
 <script>
@@ -17,6 +19,8 @@ export default {
   data(){
     return {
       title: 'My First Vue App: )',
+      header: 'Sign up for the Giveway' ,
+      text:'Grab your ninja swag for half price',
       showModal: false
     }
   },

@@ -1,9 +1,9 @@
 <template>
     <div class="backdrop">
-        <div class="modal">
-            <h1>Modal Title</h1>
+        <div class="modal" :class="{sale: theme === 'sale'}">
+            <h1>{{ header }}</h1>
             <p>
-                modal content
+                {{ text }}
             </p>
             <!-- How should we close it??? -->
             <button>
@@ -13,9 +13,11 @@
     </div>
 </template>
 
+
 <script>
 export default {
     name: 'Modal',
+    props: ['header', 'text', 'theme'],
 }
 
 </script>
@@ -38,11 +40,16 @@ export default {
         height: 100%;
     }
      h1 {
-        color:red;
+        color:lightblue;
      }
 
      /* Instead of using scoped , we can make the selector more specific */
      /* .modal h1 {
         color: red;
      } */
+
+     .modal.sale {
+            background:crimson;
+            color:white
+     }
 </style>
